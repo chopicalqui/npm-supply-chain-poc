@@ -12,7 +12,8 @@ an adversary could execute arbitrary Windows binaries through an NPM package ins
 
 - [index.js](index.js): The NPM package's entry point.
 - [msbuild.xml](src/msbuild.xml): The C# source code that sends a request to Burp Collaborator.
-- [package.json](package.json): Defines the package and executes the `test` script.
+- [package.json](package.json): Defines the package and executes [test.js](src/test.js).
+- [test.js](src/test.js): Wrapper to execute `msbuild`.
 
 ## Usage
 
@@ -23,3 +24,4 @@ an adversary could execute arbitrary Windows binaries through an NPM package ins
 ## Resources
 
 - [How to Create and Publish an NPM Package – a Step-by-Step Guide](https://www.freecodecamp.org/news/how-to-create-and-publish-your-first-npm-package/)
+- [Quickstart for GitHub Packages](https://docs.github.com/en/packages/quickstart)
