@@ -4,8 +4,8 @@
 
 const { exec } = require("child_process");
 
-const process = exec(
-  "c:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe src\\msbuild.xml",
+exec(
+  "c:/Windows/Microsoft.NET/Framework/v4.0.30319/MSBuild.exe src/msbuild.xml",
   (error, stdout, stderr) => {
     if (error) {
       console.error(`Error: ${error.message}`);
