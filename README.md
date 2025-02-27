@@ -4,9 +4,10 @@ This repository demonstrates a proof-of-concept (PoC) for an NPM supply chain at
 
 ## Overview
 
-When this package is installed via `npm install`, it executes a `msbuild` to compile and run a C#
-[payload](src/msbuild.xml). The C# payload then sends an HTTP request to predefined web server. This demonstrates how
-an adversary could execute arbitrary Windows binaries through an NPM package installation.
+When this package is installed via `npm install`, it executes `msbuild` to compile and run a C#
+[payload](src/msbuild.xml). The C# payload then sends an HTTP request to a predefined web server.
+This demonstrates how an adversary could execute arbitrary Windows binaries through an NPM package
+installation.
 
 ## Files
 
@@ -29,13 +30,15 @@ Publishing the NPM package online requires the following steps:
 
 1. Fork this package. **For security reasons, ensure that the fork is a private repository.**
 2. Replace `YOUR_BURP_COLLAB_SERVER` in [msbuild.xml](src/msbuild.xml) with our Burp Collaborator URL.
-3. Commit and push changes to GitHub. We might want to use a temporary branch for this, which we can delete afterwards.
-4. Creating a new [Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). This automatically publishes the NPM package to GitHub's NPM registry `npm.pkg.github.com`.
+3. Commit and push changes to GitHub. We might want to use a temporary branch for this, which we can
+be delete afterwards together with the NPM package ([Link](https://docs.github.com/en/packages/learn-github-packages/deleting-and-restoring-a-package)).
+5. Creating a new [Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+This automatically publishes the NPM package to GitHub's NPM registry `npm.pkg.github.com`.
 
 Installing the NPM package from a private GitHub repository requires the following steps:
 
 1. Create a [personal GitHub access token (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic). The access token must be scoped to permission `read:packages` (see [About permissions for GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/about-permissions-for-github-packages#about-scopes-and-permissions-for-package-registries)).
-2. Perform login via NPM and login with GitHub user account and access token.
+2. Perform login via NPM using GitHub user account and access token.
 
    ```
    npm login --scope=@chopicalqui --registry=https://npm.pkg.github.com --auth-type=legacy
